@@ -41,21 +41,13 @@
 
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
-
       var title = urlParams.get('title');
       var fileName  = urlParams.get('filename');
-      document.getElementById("title").value = title;
-      document.getElementById("details").value = title;
-      document.getElementById("codeblock").value = fileName;
-
-
-    }
-
-
-    function get(name){
+      document.getElementById("heading").innerHTML = title;
+      document.getElementById("details").innerHTML = title;
       
-      if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
-        return decodeURIComponent(name[1]);
+      document.getElementById("downloadlink").innerHTML  = 'http://yafursolutions.com/download/' + fileName;
+      document.getElementById("downloadlink").href  = 'http://yafursolutions.com/download/' + fileName + '.java';
     }
   </script>
 </head>
@@ -136,7 +128,7 @@
             <ul>
               <li><strong>Category</strong>: Web design</li>
               <li><strong>Client</strong>: In House Development</li>
-              <li><strong>Project date</strong>: 01 December, 2020</li>
+              <li><strong>Project date</strong>: 01 Jan, 2021</li>
               <li><strong>Download URL</strong>: <a href="#"></a></li>
             </ul>
           </div>
@@ -150,12 +142,14 @@
           </p>
         </div>
 
-        <pre>
+        <a id="downloadlink" href="#"></a>
+
+       <!-- <pre>
           <code id="codeblock">
 
           </code>
         </pre>
-
+      -->
         </textarea>
 
       </div>
