@@ -39,17 +39,21 @@
 
     function postLoad() {
 
-      var title = get('title');
-      var fileName  = get('filename');
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      var title = urlParams.get('title');
+      var fileName  = urlParams.get('filename');
       document.getElementById("title").value = title;
       document.getElementById("details").value = title;
-      document.getElementById("codeblock").value = title;
+      document.getElementById("codeblock").value = fileName;
 
 
     }
 
 
     function get(name){
+      
       if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
         return decodeURIComponent(name[1]);
     }
