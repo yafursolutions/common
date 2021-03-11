@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio Details - Yafur Solutions</title>
+  <title>Programming Coding - Yafur Solutions</title>
   <meta content="Programming Coding" name="description">
   <meta content="Programming Coding" name="keywords">
 
@@ -34,9 +34,29 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script type="text/javascript">
+
+    function postLoad() {
+
+      var title = get('title');
+      var fileName  = get('filename');
+      document.getElementById("title").value = title;
+      document.getElementById("details").value = title;
+      document.getElementById("codeblock").value = title;
+
+
+    }
+
+
+    function get(name){
+      if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+        return decodeURIComponent(name[1]);
+    }
+  </script>
 </head>
 
-<body>
+<body onload="postLoad()">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
@@ -113,19 +133,26 @@
               <li><strong>Category</strong>: Web design</li>
               <li><strong>Client</strong>: In House Development</li>
               <li><strong>Project date</strong>: 01 December, 2020</li>
-              <li><strong>Download URL</strong>: <a href="https://www.yafursolutions.com/download/offline-location-app.apk">www.yafursolutions.com/download/offline-location-app.apk</a></li>
+              <li><strong>Download URL</strong>: <a href="#"></a></li>
             </ul>
           </div>
 
         </div>
 
         <div class="portfolio-description">
-          <h2>Offline Location App</h2>
-          <p>
-            When you don't have INTERNET facility or your family member or your other device that you want to track than off-line location app will help you to find the exact location by sms. 
-            You only need to tap the request button and within seconds you will have the location that will open in map. Please note that the other device should allow your contact by using Allow Contact menu settings.
+          <h2 id="heading"></h2>
+          <p id="details">
+            
           </p>
         </div>
+
+        <pre>
+          <code id="codeblock">
+
+          </code>
+        </pre>
+
+        </textarea>
 
       </div>
     </section><!-- End Portfolio Details Section -->
